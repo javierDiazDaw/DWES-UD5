@@ -8,13 +8,15 @@
 </head>
 <body>
 <?php
-    // start a session
+    
     session_start();
-    $_SESSION["nombre"] = "Pepito Conejo";
+    /*$_SESSION["nombre"] = "Javier Diaz";
     print "<p>El nombre es $_SESSION[nombre]</p>";
-    print "<p>Se ha guardado su nombre.</p>\n";
+    print "<p>Se ha guardado su nombre.</p>\n";*/
 
-    // manipulate session variables
+    echo session_id();
+
+    
 ?>
 </body>
 </html>
