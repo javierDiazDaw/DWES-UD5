@@ -28,13 +28,12 @@
                 echo "<tr>";
                     echo"<td>session.save_handler</td>";
                     echo"<td>(String) Define el nombre del gestor que se usa para almacenar y recuperar información asociada con una sesión. 
-                        Por defecto es files. Observe que las extensiones individuales pueden registrar 
-                        sus propios gestores save_handler;</td>";
+                        Por defecto es files.</td>";
                 echo "</tr>";
                 echo "<tr>";
                     echo"<td>session.name</td>";
-                    echo"<td>(String) Especifica el nombre de la sesión que se usa como nombre de cookie. 
-                    Sólo debería contener caracteres alfanuméricos. Por defecto es PHPSESSID. FUNCIÓN: session_name().</td>";
+                    echo"<td>(String) Especifica el nombre de la sesión que se usa como nombre de cookie (archivo). 
+                    Sólo debería contener caracteres alfanuméricos. Por defecto es PHPSESSID.</td>";
                 echo "</tr>";
                 echo "<tr>";
                     echo"<td>session.auto_start</td>";
