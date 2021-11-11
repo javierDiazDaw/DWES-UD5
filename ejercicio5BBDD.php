@@ -12,7 +12,7 @@
                 $conexion = new PDO("mysql:host=$GLOBALS[servidor];dbname=$GLOBALS[baseDatos]", $GLOBALS['user'], $GLOBALS['pass']);
                 echo "Conectado correctamente";
                 echo"<br>";
-                $consulta =$conexion->prepare("INSERT INTO resgistro (usuario, contrasenia, cuentaBancaria) VALUES (?,?,?)");
+                $consulta =$conexion->prepare("INSERT INTO registro (usuario, contrasenia, cuentaBancaria) VALUES (?,?,?)");
             
                 $consulta->bindParam(1,$usuario);
                 $consulta->bindParam(2,$contrasenia);
