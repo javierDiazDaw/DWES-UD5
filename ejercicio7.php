@@ -18,7 +18,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $usuario=$_POST["usuario"];
+        $usuario = $_POST["usuario"];
         $contrasenia = $_POST["contrasenia"];     
 
             $usuario = stripslashes($usuario);
@@ -38,6 +38,12 @@
                $retorno = password_verify($contrasenia,$contraseniaEncr);
                if($retorno){
                    echo "Contraseña correcta";
+
+                   if($perfil == "usuario"){
+
+                    header("location: admin.php");
+
+                   }
                }
                else{
                    echo "Contraseña incorrecta";
@@ -46,8 +52,7 @@
            else{
                echo "Usuario o contraseña incorrecto";
            }
-
-        }
+    }
     
 
 ?>

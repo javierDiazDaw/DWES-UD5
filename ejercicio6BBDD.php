@@ -10,13 +10,13 @@ function getUser($usuario){
 
     try {
         $conexion = new PDO("mysql:host=$GLOBALS[servidor];dbname=$GLOBALS[baseDatos]", $GLOBALS['user'], $GLOBALS['pass']);
-        $consulta =$conexion->prepare("SELECT * usuario FROM registro"); 
+        $consulta =$conexion->prepare("SELECT * FROM registro WHERE usuario= ?"); 
     
-        $consulta->bindParam(1,$usuario);
-    
-        
+        $consulta->bindParam(1,$usuario);       
         $consulta->execute();
-        return $conexion->lastInsertId();
+        $retorno = $consulta->fetch(PDO::FETCH_ASSOC);
+        $conexion = null;
+        return $retorno;
         
 
     } catch(PDOException $e){
