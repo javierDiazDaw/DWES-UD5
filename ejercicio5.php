@@ -23,34 +23,16 @@
         $usuario=$_POST["usuario"];
         $contrasenia = $_POST["contrasenia"];
         $cuentaBancaria = $_POST["cuentaBancaria"];
+        $perfil = $_POST["perfil"];
 
-        if (empty($usuario)){
-            $errorusuario = "Este campo debe estar relleno";
-        } else{
-            $errorusuario = "";
-           
-        } 
-
-
-        if (empty($contrasenia)){
-            $errorcontrasenia = "Este campo debe estar relleno";
-        } else{
-    
-             $errorcontrasenia = "";
-            
-        } 
-
-        if (empty($cuentabancaria)){
-            $erroruentabancaria = "Este campo debe estar relleno";
-        } else{
-    
-             $errorcuentabancaria = "";
-            
-        }       
-
+        
             $usuario = stripslashes($usuario);
             $usuario = strip_tags($usuario);
             $usuario = htmlspecialchars($usuario);
+
+            $perfil = stripslashes($perfil);
+            $perfil = strip_tags($perfil);
+            $perfil = htmlspecialchars($perfil);
 
             $contrasenia = stripslashes($contrasenia);
             $contrasenia = strip_tags($contrasenia);
@@ -61,7 +43,7 @@
             $cuentaBancaria = strip_tags($cuentaBancaria);
             $cuentaBancaria = htmlspecialchars($cuentaBancaria);
 
-            instertarDatos($usuario, $contrasenia, $cuentaBancaria);
+            instertarDatos($usuario, $contrasenia, $cuentaBancaria, $perfil);
     }
 
     
@@ -73,9 +55,10 @@
     
     <form class="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 
-        <input class="input" type="text" name="usuario" placeholder="usuario" value = "<?php echo $usuario;?>">
+        <input class="input" type="text" name="usuario" placeholder="usuario" >
         <input class="input" type="password" name="contrasenia" placeholder="contraseña">
-        <input class="input" type="text" name="cuentaBancaria" placeholder="Cuenta bancaria" value = "<?php echo $cuentaBancaria;?>">
+        <input class="input" type="text" name="cuentaBancaria" placeholder="Cuenta bancaria" >
+        <input class="input" type="text" name="perfil" placeholder="Perfil" >
         <button type="submit" id="login-button">Entrar</button>
         
     </form>
