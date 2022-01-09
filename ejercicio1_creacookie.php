@@ -15,7 +15,7 @@
         setcookie("nombrecookie", $nombre, time()+10800);
         setcookie("edadcookie", $edad, time()+10800);
        
-        
+        echo "En esta página se crea la coockie.";
 
        
 

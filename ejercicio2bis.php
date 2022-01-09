@@ -9,11 +9,11 @@
 <body>
 <?php
     
-    session_start();
-    /*$_SESSION["nombre"] = "Javier Diaz";
-    print "<p>El nombre es $_SESSION[nombre]</p>";
-    print "<p>Se ha guardado su nombre.</p>\n";*/
-
+    session_start();   
+    echo "<br>";
+    $id=$_COOKIE["PHPSESSID"];
+    echo $id;
+    echo "<br>";
     echo session_id();
 
     phpinfo();

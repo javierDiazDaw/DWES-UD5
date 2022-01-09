@@ -11,9 +11,11 @@
 
     include "ejercicio6BBDD.php";
 
-    $usuario = "";
-  
+    $usuario = "";  
     $contrasenia = "";
+    $error= "";
+    $errorContrasenia = "";
+    $correcto= "";
    
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -37,14 +39,14 @@
                $contraseniaEncr = $datos["contrasenia"];
                $retorno = password_verify($contrasenia,$contraseniaEncr);
                if($retorno){
-                   echo "Contraseña correcta";
+                   $correcto = "Contraseña correcta";
                }
                else{
-                   echo "Contraseña incorrecta";
+                   $errorContrasenia = "Contraseña incorrecta";
                }
            }
            else{
-               echo "Usuario o contraseña incorrecto";
+               $error = "Usuario o contraseña incorrecto";
            }
 
         }
@@ -60,8 +62,13 @@
         <input class="input" type="text" name="usuario" placeholder="usuario" value = "<?php echo $usuario;?>">
         <input class="input" type="password" name="contrasenia" placeholder="contraseña">
         <button type="submit" id="login-button">Entrar</button>
+        <br>
+        <div id = "comprobaciones"><?php echo $error, $errorContrasenia, $correcto ?></div id = "comprobaciones">
         
     </form>
+
+
+
 </div>
 </body>
 </html>

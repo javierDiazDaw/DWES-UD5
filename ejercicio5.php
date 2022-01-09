@@ -11,12 +11,10 @@
 
     include"ejercicio5BBDD.php";
 
-    $usuario = "";
-    $errorusuario = "";
-    $contrasenia = "";
-    $errorcontrasenia = "";
+    $usuario = "";   
+    $contrasenia = "";   
     $cuentaBancaria = "";
-    $errorcuentaBancaria = "";
+   
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -37,31 +35,30 @@
             $contrasenia = stripslashes($contrasenia);
             $contrasenia = strip_tags($contrasenia);
             $contrasenia = htmlspecialchars($contrasenia);
+            //Para encriptar la contraseña y que no aparezca en la base de datos
             $contrasenia = password_hash($contrasenia,PASSWORD_DEFAULT);
 
             $cuentaBancaria = stripslashes($cuentaBancaria);
             $cuentaBancaria = strip_tags($cuentaBancaria);
             $cuentaBancaria = htmlspecialchars($cuentaBancaria);
 
-            instertarDatos($usuario, $contrasenia, $cuentaBancaria, $perfil);
-    }
+            insertarDatos($usuario, $contrasenia, $cuentaBancaria, $perfil);
+    } 
 
-    
-
-?>
-<div class="wrapper">
-<div class="container">
-    <h1>REGISTRO</h1>
-    
-    <form class="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-
-        <input class="input" type="text" name="usuario" placeholder="usuario" >
-        <input class="input" type="password" name="contrasenia" placeholder="contraseña">
-        <input class="input" type="text" name="cuentaBancaria" placeholder="Cuenta bancaria" >
-        <input class="input" type="text" name="perfil" placeholder="Perfil" >
-        <button type="submit" id="login-button">Entrar</button>
+    ?>
+    <div class="wrapper">
+    <div class="container">
+        <h1>REGISTRO</h1>
         
-    </form>
-</div>
+        <form class="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+
+            <input class="input" type="text" name="usuario" placeholder="usuario" >
+            <input class="input" type="password" name="contrasenia" placeholder="contraseña">
+            <input class="input" type="text" name="cuentaBancaria" placeholder="Cuenta bancaria" >
+            <input class="input" type="text" name="perfil" placeholder="Perfil" >
+            <button type="submit" id="login-button">Entrar</button>
+            
+        </form>
+    </div>
 </body>
 </html>

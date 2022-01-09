@@ -12,10 +12,8 @@
     session_start();
     $_SESSION["nombre"] = "Javier";
     $_SESSION["edad"] = 23;
-    /*print "<p>El nombre es $_SESSION[nombre]</p>";
-    print "<p>Se ha guardado su nombre.</p>\n";*/
-
-    echo session_id();
+    //echo session_id();
+    echo "pagina donde se crea la session";
 
     
 ?>

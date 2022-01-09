@@ -14,7 +14,7 @@
     echo "<br>";
     print_r($_COOKIE);
     echo"<br>";
-    echo $_COOKIE["nombrecookie"]. " tiene" . $_COOKIE["edadcookie"]. " años.";
+    echo $_COOKIE["nombrecookie"]. " tiene " . $_COOKIE["edadcookie"]. " años.";
 
 
 
