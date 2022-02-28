@@ -50,17 +50,13 @@
             $sqlQuery = "SELECT * FROM album  WHERE ArtistId = ?";
             $stmt = $GLOBALS['conn']->prepare($sqlQuery);
             $stmt->bindParam(1, $id_artista);
-
             $stmt->execute();
-
             $albunes = $stmt->fetchAll();
-
         } catch (PDOException $e) {
             $e->getMessage();
         }
 
         $stmt = null;
-
         return $albunes;
     }
 
@@ -108,7 +104,7 @@
         $execute = false;
 
         try {
-            $sqlQuery = "INSERT INTO track (Name, AlbumId, MediaTypeId, GenreId, Composer, Miliseconds, Bytes, UnitPrice) VALUES (?,?,?,?,?,?,?,?)";
+            $sqlQuery = "INSERT INTO track (`Name`, AlbumId, MediaTypeId, GenreId, Composer, Miliseconds, Bytes, UnitPrice) VALUES (?,?,?,?,?,?,?,?)";
             $stmt = $GLOBALS['conn']->prepare($sqlQuery);
     
             $stmt->bindParam(1, $nombre);

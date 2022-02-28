@@ -23,20 +23,18 @@ require_once("databaseManager.inc.php");
     if ($_SERVER["REQUEST_METHOD"] != "POST") {
     $listas = listas();
     echo '<table border="1">';
-    echo 	'<tr>';
-    echo 		'<th>Título</th>';
-    echo 	'</tr>';
+        echo'<tr>';
+            echo'<th>Título</th>';
+        echo'</tr>';
     foreach ($listas as $lista) {
-        echo 	'<tr>';
-        echo 		'<td>' . $lista['Name'] . '</td>';
-        echo 	'</tr>';
+        echo'<tr>';
+            echo'<td>' . $lista['Name'] . '</td>';
+        echo'</tr>';
     }
     echo '</table>';
     echo '<br>';
     } else {
-
         setcookie("Nombre", $_POST['nombre']);
-
         $listas = listaFiltrada($_POST['nombre']);
         echo '<table border="1">';
         echo 	'<tr>';
